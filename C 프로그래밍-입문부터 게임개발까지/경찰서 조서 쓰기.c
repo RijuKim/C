@@ -27,7 +27,7 @@ int main()
 	scanf_s("%s", what, sizeof(what));
 
 	//조서 내용 출력
-	printf("\n\--- 범죄자 정보 ---\n\n");
+	printf("\n\n--- 범죄자 정보 ---\n\n");
 	printf(" 이름     : %s\n", name);
 	printf(" 나이     : %d\n", age);
 	printf(" 몸무게   : %.2f\n", weight);
