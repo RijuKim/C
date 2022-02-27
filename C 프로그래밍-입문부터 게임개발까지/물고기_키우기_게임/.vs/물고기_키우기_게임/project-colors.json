@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "e832e4e0-22e6-4a44-af0c-5d81f6a0a1ae": {
+      "ProjectGuid": "e832e4e0-22e6-4a44-af0c-5d81f6a0a1ae",
+      "DisplayName": "물고기_키우기_게임",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
