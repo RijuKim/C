@@ -1,3 +1,4 @@
 ﻿  pointer.c
 C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\물고기_키우기_게임\물고기_키우기_게임\pointer.c(75,9): warning C4013: 'exit'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\물고기_키우기_게임\물고기_키우기_게임\pointer.c(80,21): warning C4013: 'checkFishAlive'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
   물고기_키우기_게임.vcxproj -> C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\물고기_키우기_게임\x64\Debug\물고기_키우기_게임.exe

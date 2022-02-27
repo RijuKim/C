@@ -75,6 +75,20 @@ int main(void)
 				exit(0);
 			}
 		}
+
+		//모든 물고기가 죽었는지 확인
+		if (checkFishAlive() == 0) {
+			//물고기 모두 죽음
+			printf("모든 물고기가 죽었습니다");
+			exit(0);
+		}
+		else {
+			//최소 한마리 이상 물고기는 살아 있음
+			printf("물고기가 아직 살아있어요!\n");
+		}
+		prevElasedTime = totalElapsedTime;
+
+		//10초 -> 15초 (5초 : prevElapsedTime->15초) ->25초(10초)
 	}
 
 	return 0;
@@ -105,4 +119,13 @@ void decreaseWater(long elapsedTime) {
 			arrayFish[i] = 0;
 		}
 	}
+}
+
+int checkFishAlive() {
+	for (int i = 0; i < 6; i++) {
+		if (arrayFish[i] > 0)
+			return 1; //참
+	}
+
+	return 0;
 }
