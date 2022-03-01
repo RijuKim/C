@@ -8,16 +8,18 @@
 
 int arrayAnimal[4][5]; //카드 지도 (20장의 카드)
 int checkAnimal[4][5]; //뒤집혔는지 여부 확인
-char* strAnimal[10];
+char* strAnimal[10]; //동물의 이름 캐릭터 포인터형
 
-void initAnimalArray();
+void initAnimalArray(); //동물 배열
 void initAnimalName();
 void shuffleAnimal();
-int getEmptyPosition();
+int getEmptyPosition(); //좌표에서 빈 공간 찾기
+
 int conv_pos_x(int x);
 int conv_pos_y(int y);
-void printAnimals();
-void printQuestion();
+
+void printAnimals(); //동물 위치 출력
+void printQuestion(); //문제 출력(카드 지도)
 
 int main(void)
 {
@@ -30,9 +32,9 @@ int main(void)
 
 	int failCount = 0; //실패 횟수
 
-	while (1) {
+	while (1) { //무한 루프 게임 진행
 		int select1 = 0; //사용자가 선택한 처음 수
-		int select2 = 0; //사용자가 선택한 두번째 수 
+		int select2 = 0; //사용자가 선택한 두번째 수
 
 		printAnimals(); //동물 위치 출력
 		printQuestion(); //문제 출력(카드 지도)
@@ -41,6 +43,48 @@ int main(void)
 
 		if (select1 == select2)//같은 카드 선택 시 무효
 			continue;
+
+		//좌표에 해당하는 카드를 뒤집어 보고 같은지 안 같은지 확인
+		//정수 좌표를(x, y)로 변환
+		int firstSelect_x = conv_pos_x(select1);
+		int firstSelect_y = conv_pos_y(select1);
+
+		int secondSelect_x = conv_pos_x(select2);
+		int secondSelect_y = conv_pos_y(select2);
+
+		//같은 동물인 경우
+		if ((checkAnimal[firstSelect_x][firstSelect_y]==0//카드가 뒤집히지 않았는지
+			&&
+			checkAnimal[secondSelect_x][secondSelect_y]==0)
+			&&
+			(arrayAnimal[firstSelect_x][firstSelect_y]
+				==arrayAnimal[secondSelect_x][secondSelect_y])
+			//두 동물이 같은지
+			)
+		{
+			printf("\n\n빙고!: %s 발견\n\n", strAnimal[arrayAnimal[firstSelect_x][firstSelect_y]]);
+			checkAnimal[firstSelect_x][firstSelect_y] = 1;
+			checkAnimal[secondSelect_x][secondSelect_y] = 1;
+		}
+
+		//다른 동물인 경우
+		else {
+			printf("\n\n 땡!!(틀렸거나, 이미 뒤집힌 카드입니다) \n");
+			printf("%d: %s\n", select1, strAnimal[arrayAnimal[firstSelect_x][firstSelect_y]]);
+			printf("%d: %s\n", select1, strAnimal[arrayAnimal[secondSelect_x][secondSelect_y]]);
+			//틀린 카드를 알려줌
+			printf("\n\n");
+
+			failCount++;
+		}
+
+		//모든 동물을 찾았는지 여부 확인, 1: 참, 0: 거짓
+		if (foundAllAnimals() == 1) {
+			printf("\n\n축하합니다! 모든 동물을 다 찾았습니다. \n");
+			printf("지금까지 총 %d 번 실수하였습니다\n", failCount);
+			break;
+		
+		}
 	}
 
 	return 0;
@@ -70,9 +114,12 @@ void initAnimalName() {
 }
 
 void shuffleAnimal() {
+
+	//비어있는 맵에서 비어있는 2개의 위치를 찾아 똑같은 동물을 집어넣는다
+	//10번하면 20번
 	for (int i = 0; i < 10; i++) {
 		for (int j = 0; j < 2; j++) {
-			int pos = getEmptyPosition();
+			int pos = getEmptyPosition(); //비어있는 위치 반환
 			int x = conv_pos_x(pos);
 			int y = conv_pos_y(pos);
 
@@ -90,8 +137,8 @@ int getEmptyPosition() {
 		int x = conv_pos_x(randPos);
 		int y = conv_pos_y(randPos);
 
-		if (arrayAnimal[x][y] == -1) {
-			return randPos;
+		if (arrayAnimal[x][y] == -1) { //초기 -1로 설정했기 때문에 -1일 경우 빈 공간
+			return randPos;//반복작업을 안 하려면 구조체로도 정의 가능
 		}
 	}
 	return 0;
@@ -108,7 +155,7 @@ int conv_pos_y(int y) {
 
 void printAnimals() {
 	printf("\n=====이건 비밀인데 몰래 보여줍니다====\n\n");
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < 4; i++) {
 		for (int j = 0; j < 5; j++) {
 			printf("%8s", strAnimal[arrayAnimal[i][j]]);
 		}
@@ -124,13 +171,25 @@ void printQuestion() {
 	for (int i= 0; i < 4; i++) {
 		for (int j= 0; j < 5; j++) {
 			//카드를 뒤집어 정답을 맞췄으면 '동물 이름'
-			if (checkAnimal[i][j] = !0) {
+			if (checkAnimal[i][j] != 0) {
 				printf("%8s", strAnimal[arrayAnimal[i][j]]);
 			}
 			else {
 				printf("%8d", seq);
 			}
+			seq++;
 			//아직 뒤집지 못했으면 뒷면->위치를 나타내는 숫자
 		}
+		printf("\n");
 	}
+}
+int foundAllAnimals() {
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 5; j++) {
+			if (checkAnimal[i][j] == 0) {
+				return 0;
+			}
+		}
+	}
+	return 1; //모두 다 찾음
 }
