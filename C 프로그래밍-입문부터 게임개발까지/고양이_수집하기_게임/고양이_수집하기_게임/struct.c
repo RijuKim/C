@@ -23,8 +23,38 @@ int collection[5] = { 0,0,0,0,0 };
 //전체 고양이 리스트
 CAT cats[5];
 
+void initCats(); //고양이 정보 초기화
+
 int main (void){
 
 	srand(time(NULL));
 	return 0;
+}
+
+void initCats() {
+
+	cats[0].name = "깜냥이";
+	cats[0].age = 5;
+	cats[0].character = "온순";
+	cats[0].level = 1;
+
+	cats[0].name = "구름이";
+	cats[0].age = 11;
+	cats[0].character = "까칠";
+	cats[0].level = 3;
+
+	cats[0].name = "꼬맹이";
+	cats[0].age = 1;
+	cats[0].character = "애교많음";
+	cats[0].level = 2;
+
+	cats[0].name = "포포";
+	cats[0].age = 6;
+	cats[0].character = "더러움";
+	cats[0].level = 5;
+
+	cats[0].name = "꿀꿀이";
+	cats[0].age = 3;
+	cats[0].character = "먹보";
+	cats[0].level = 4;
 }
