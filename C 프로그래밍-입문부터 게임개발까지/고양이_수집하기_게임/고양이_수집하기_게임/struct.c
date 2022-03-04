@@ -24,10 +24,23 @@ int collection[5] = { 0,0,0,0,0 };
 CAT cats[5];
 
 void initCats(); //고양이 정보 초기화
+void printCat(int selected);
 
 int main (void){
 
 	srand(time(NULL));
+
+	initCats();
+	while (1) {
+		printf("두근두근~ 어느 고양이의 집사가 될까요?\n아무 키나 눌러서 확인하세요!");
+		getchar();
+
+		int selected = rand() * 5; //0-4 사이의 숫자 반환
+		printCat(selected); //뽑은 고양이 정보 출력
+		collection[selected] = 1; //고양이 뽑기 처리
+
+		int collectAll = checkCollection();
+	}
 	return 0;
 }
 
@@ -57,4 +70,17 @@ void initCats() {
 	cats[0].age = 3;
 	cats[0].character = "먹보";
 	cats[0].level = 4;
+}
+
+void printCat(int selected) {
+	printf("\n\n===당신은 이 고양이의 집사가 되었어요!===\n\n");
+	printf(" 이름        : %s\n", cats[selected].name);
+	printf(" 나이        : %d\n", cats[selected].age);
+	printf(" 특징(성격)  : %s\n", cats[selected].character);
+	printf(" 레벨        : ");
+
+	for (int i = 0; i < cats[selected].level; i++) {
+		printf("%s", "★");
+	}
+	printf("\n\n");
 }
