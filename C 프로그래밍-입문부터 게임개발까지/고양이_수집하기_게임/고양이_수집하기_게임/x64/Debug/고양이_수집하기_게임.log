@@ -2,12 +2,13 @@
 C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(31,7): warning C4013: 'srand'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
 C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(38,22): warning C4013: 'rand'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
 C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(42,35): warning C4013: 'checkCollection'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(49,28): warning C4047: '=': 'char'의 간접 참조 수준이 'char [7]'과(와) 다릅니다.
-C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(54,28): warning C4047: '=': 'char'의 간접 참조 수준이 'char [7]'과(와) 다릅니다.
-C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(59,28): warning C4047: '=': 'char'의 간접 참조 수준이 'char [7]'과(와) 다릅니다.
-C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(64,25): warning C4047: '=': 'char'의 간접 참조 수준이 'char [5]'과(와) 다릅니다.
-C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(69,28): warning C4047: '=': 'char'의 간접 참조 수준이 'char [7]'과(와) 다릅니다.
-C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(77,9): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
-C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(77,9): warning C4313: 'printf': 서식 문자열의 '%s'이(가) 인수 1('int' 형식)과(와) 충돌합니다.
-struct.obj : error LNK2019: checkCollectionmain 함수에서 참조되는 확인할 수 없는 외부 기호
-C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\x64\Debug\고양이_수집하기_게임.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.
+C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(51,28): warning C4047: '=': 'char'의 간접 참조 수준이 'char [7]'과(와) 다릅니다.
+C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(56,28): warning C4047: '=': 'char'의 간접 참조 수준이 'char [7]'과(와) 다릅니다.
+C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(61,28): warning C4047: '=': 'char'의 간접 참조 수준이 'char [7]'과(와) 다릅니다.
+C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(66,25): warning C4047: '=': 'char'의 간접 참조 수준이 'char [5]'과(와) 다릅니다.
+C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(71,28): warning C4047: '=': 'char'의 간접 참조 수준이 'char [7]'과(와) 다릅니다.
+C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(79,9): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
+C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(79,9): warning C4313: 'printf': 서식 문자열의 '%s'이(가) 인수 1('int' 형식)과(와) 충돌합니다.
+C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(103,11): warning C4477: 'printf' : 서식 문자열 '%10s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
+C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\고양이_수집하기_게임\struct.c(103,11): warning C4313: 'printf': 서식 문자열의 '%s'이(가) 인수 1('int' 형식)과(와) 충돌합니다.
+  고양이_수집하기_게임.vcxproj -> C:\Users\me\Documents\C\C 프로그래밍-입문부터 게임개발까지\고양이_수집하기_게임\x64\Debug\고양이_수집하기_게임.exe
