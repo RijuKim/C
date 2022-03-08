@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c60606db-d5c6-4c8c-b234-7f2d4b1c0111": {
+      "ProjectGuid": "c60606db-d5c6-4c8c-b234-7f2d4b1c0111",
+      "DisplayName": "고양이_수집하기_게임",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
